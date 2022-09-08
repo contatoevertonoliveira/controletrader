@@ -29,6 +29,31 @@ class EventosForm(forms.ModelForm):
     "placeholder":"1.50"
   }))
   
+  invest = forms.FloatField(widget=forms.TextInput(attrs={
+    "class":"form-control",
+    "placeholder":"10.00"
+  }))
+  
+  retor = forms.FloatField(widget=forms.TextInput(attrs={
+    "class":"form-control",
+    "placeholder":"5.00"
+  }))
+  
+  pl1 = forms.IntegerField(widget=forms.TextInput(attrs={
+    "class":"form-control",
+    "placeholder":"3"
+  }))
+  
+  pl2 = forms.IntegerField(widget=forms.TextInput(attrs={
+    "class":"form-control",
+    "placeholder":"2"
+  }))
+  
+  statusTrader = forms.CharField(widget=forms.TextInput(attrs={
+    "class":"form-control",
+    "placeholder":"Em Andamento, Ganho ou Perdido"
+  }))
+  
   class Meta:
     model = Eventos
     fields = ['dataEvent','desc','merc','typeMerc','odds','invest','retor','pl1','pl2','statusTrader']

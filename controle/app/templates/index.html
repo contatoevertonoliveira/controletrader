@@ -19,7 +19,7 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">ControleTrader</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">Dashboard</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/">Dashboard</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/form/">Cadastro De Entradas</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Histórico</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Análises</a>
@@ -102,61 +102,18 @@
                               </tr>
                             </thead>
                             <tbody>
+                                {% for dbs in db %}
                               <tr>
-                                <th scope="row">01/09/2022</th>
-                                <td>Palmeiras x Atlético-PR</td>
-                                <td class="text-center">Probabilidades</td>
-                                <td class="text-center">Contra Visitante: <b><span class="text-danger">3.45</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">$ 50.00</span></b></td>
-                                <td class="text-center"><b><span class="text-success">$ 25.00</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">2 x 1</span></b></td>
-                                <td class="text-center"><b><span class="text-success">Ganho</span></b></td>
+                                <th scope="row">{{dbs.dataEvent}}</th>
+                                <td>{{dbs.desc}}</td>
+                                <td class="text-center">{{dbs.merc}}</td>
+                                <td class="text-center">{{dbs.typeMerc}}: <b><span class="text-danger">{{dbs.odds}}</span></b></td>
+                                <td class="text-center"><b><span class="text-primary">{{dbs.invest}}</span></b></td>
+                                <td class="text-center"><b><span class="text-success">{{dbs.invest}}</span></b></td>
+                                <td class="text-center"><b><span class="text-primary">{{dbs.pl1}} x {{dbs.pl2}}</span></b></td>
+                                <td class="text-center"><b><span class="text-success">{{dbs.statusTrader}}</span></b></td>
                               </tr>
-
-                              <tr>
-                                <th scope="row">02/09/2022</th>
-                                <td>São Paulo x América-MG</td>
-                                <td class="text-center">Probabilidades</td>
-                                <td class="text-center">Contra Empate: <b><span class="text-danger">3.60</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">$ 36.00</span></b></td>
-                                <td class="text-center"><b><span class="text-danger">$ -36.00</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">2 x 2</span></b></td>
-                                <td class="text-center"><b><span class="text-danger">Perdido</span></b></td>
-                              </tr>
-
-                              <tr>
-                                <th scope="row">03/09/2022</th>
-                                <td>Cruzeiro x Brusque-SC</td>
-                                <td class="text-center">Over 1.5 Gols</td>
-                                <td class="text-center">Favor: <b><span class="text-primary">3.80</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">$ 50.00</span></b></td>
-                                <td class="text-center"><b><span class="text-success">$ 190.00</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">3 x 1</span></b></td>
-                                <td class="text-center"><b><span class="text-success">Ganho</span></b></td>
-                              </tr>
-
-                              <tr>
-                                <th scope="row">04/09/2022</th>
-                                <td>Atlético-MG x Atlético-GO</td>
-                                <td class="text-center">Over 2.5 Gols</td>
-                                <td class="text-center">Favor: <b><span class="text-primary">2.50</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">$ 25.00</span></b></td>
-                                <td class="text-center"><b><span class="text-success">$ 62.50</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">2 x 1</span></b></td>
-                                <td class="text-center"><b><span class="text-success">Ganho</span></b></td>
-                              </tr>
-
-                              <tr>
-                                <th scope="row">05/09/2022</th>
-                                <td>Corinthians x Internacional</td>
-                                <td class="text-center">Correct Score</td>
-                                <td class="text-center">Contra 1 x 1: <b><span class="text-danger">1.89</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">$ 94.50</span></b></td>
-                                <td class="text-center"><b><span class="text-success">$ 50.00</span></b></td>
-                                <td class="text-center"><b><span class="text-primary">2 x 2</span></b></td>
-                                <td class="text-center"><b><span class="text-success">Ganho</span></b></td>
-                              </tr>
-                              
+                                {% endfor %}
                             </tbody>
                           </table>
                         </div>
